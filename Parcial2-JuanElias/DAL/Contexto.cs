@@ -13,6 +13,7 @@ namespace Parcial2_JuanElias.DAL
         public DbSet<Asignaturas> Asignatura { get; set; }
         public DbSet<Estudiantes> Estudiante { get; set; }
         public DbSet<Inscripciones> Inscripcion { get; set; }
+        public DbSet<InscripcionesDetalle> InscripcionDetalle { get; set; }
         public Contexto() : base("ConStr") { }
     }
 }
