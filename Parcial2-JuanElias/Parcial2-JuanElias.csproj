@@ -74,6 +74,12 @@
     <Compile Include="UI\Registros\rAsignaturas.Designer.cs">
       <DependentUpon>rAsignaturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEstudiantes.Designer.cs">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\rAsignaturas.resx">
       <DependentUpon>rAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEstudiantes.resx">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
