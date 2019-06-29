@@ -69,12 +69,33 @@ namespace Parcial2_JuanElias.UI.Registros
             return (Asignatura != null);
 
         }
+        private bool Validar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (string.IsNullOrWhiteSpace(DescripciontextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripciontextBox, "No deje esto vacio.");
+                paso = false;
+            }
+
+            if (CreditosnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(CreditosnumericUpDown, "Una asignatura no puede tener 0 creditos.");
+                paso = false;
+            }
+            return paso;
+        }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas Asignatura = new Asignaturas();
             bool paso = false;
             Asignatura = LlenaClase();
+
+            if (!Validar())
+                return;
 
             if (AsignaturaIdnumericUpDown.Value == 0)
                 paso = Repositorio.Guardar(Asignatura);
