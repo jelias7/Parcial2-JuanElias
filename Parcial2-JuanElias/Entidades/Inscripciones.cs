@@ -13,11 +13,13 @@ namespace Parcial2_JuanElias.Entidades
         public int InscripcionId { get; set; }
         public DateTime Fecha { get; set; }
         public double Monto { get; set; }
+        public virtual List<InscripcionesDetalle> Asignatura { get; set; }
         public Inscripciones()
         {
             InscripcionId = 0;
             Fecha = DateTime.Now;
             Monto = 0;
+            Asignatura = new List<InscripcionesDetalle>();
         }
     }
 }
