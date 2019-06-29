@@ -55,12 +55,34 @@ namespace Parcial2_JuanElias.UI.Registros
             Estudiantes estudiante = Repositorio.Buscar((int)EstudianteIdnumericUpDown.Value);
             return (estudiante != null);
         }
+        private bool Validar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
+            {
+                MyErrorProvider.SetError(NombrestextBox, "No puede ser vacio.");
+                paso = false;
+            }
+
+            if (FechaIngresodateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaIngresodateTimePicker, "No se puede registrar esta fecha.");
+                paso = false;
+            }
+
+            return paso;
+        }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
             Estudiantes Estudiante = new Estudiantes();
             bool paso = false;
             Estudiante = LlenaClase();
+
+            if (!Validar())
+                return;
 
             if (EstudianteIdnumericUpDown.Value == 0)
                 paso = Repositorio.Guardar(Estudiante);
