@@ -18,7 +18,29 @@ namespace Parcial2_JuanElias.UI.Registros
         public rInscripciones()
         {
             InitializeComponent();
+            EstudianteComboBox();
+            AsignaturaComboBox();
+            EstudiantecomboBox.Text = null;
+            AsignaturacomboBox.Text = null;
             Detalle = new List<InscripcionesDetalle>();
+        }
+        private void EstudianteComboBox()
+        {
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
+            var list = new List<Estudiantes>();
+            list = Repositorio.GetList(p => true);
+            AsignaturacomboBox.DataSource = list;
+            AsignaturacomboBox.DisplayMember = "Nombres";
+            AsignaturacomboBox.ValueMember = "EstudianteId";
+        }
+        private void AsignaturaComboBox()
+        {
+            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
+            var list = new List<Asignaturas>();
+            list = Repositorio.GetList(p => true);
+            AsignaturacomboBox.DataSource = list;
+            AsignaturacomboBox.DisplayMember = "Descripcion";
+            AsignaturacomboBox.ValueMember = "AsignaturaId";
         }
         private void CargarGrid()
         {
