@@ -184,22 +184,26 @@ namespace Parcial2_JuanElias.UI.Registros
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
+            if (!Validar())
+                return;
+
             RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas Asignatura = Repositorio.Buscar((int)AsignaturacomboBox.SelectedValue);
 
-            if (DetalledataGridView.DataSource != null)
-                this.Detalle = (List<InscripcionesDetalle>)DetalledataGridView.DataSource;
+
+                if (DetalledataGridView.DataSource != null)
+                    this.Detalle = (List<InscripcionesDetalle>)DetalledataGridView.DataSource;
 
 
-            this.Detalle.Add(new InscripcionesDetalle()
-            {
-                InscripcionId = (int)InscripcionIdnumericUpDown.Value,
-                AsignaturaId = (int)AsignaturacomboBox.SelectedValue,
-                DetalleId = 0,
-                Subtotal = (double)Asignatura.Creditos * (double)CostoCreditosnumericUpDown.Value
-            });
+                this.Detalle.Add(new InscripcionesDetalle()
+                {
+                    InscripcionId = (int)InscripcionIdnumericUpDown.Value,
+                    AsignaturaId = (int)AsignaturacomboBox.SelectedValue,
+                    DetalleId = 0,
+                    Subtotal = (double)Asignatura.Creditos * (double)CostoCreditosnumericUpDown.Value
+                });
 
-            CargarGrid();
+                CargarGrid();
         }
         private bool ValidarEliminar()
         {
