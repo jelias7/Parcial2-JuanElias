@@ -255,7 +255,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::Parcial2_JuanElias.Properties.Resources.Search_find_locate_1542;
-            this.Buscarbutton.Location = new System.Drawing.Point(181, 12);
+            this.Buscarbutton.Location = new System.Drawing.Point(190, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(40, 37);
             this.Buscarbutton.TabIndex = 17;
