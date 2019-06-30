@@ -1,4 +1,5 @@
-﻿using Parcial2_JuanElias.UI.Registros;
+﻿using Parcial2_JuanElias.UI.Consultas;
+using Parcial2_JuanElias.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,12 @@ namespace Parcial2_JuanElias
         {
             rInscripciones ins = new rInscripciones();
             ins.Show();
+        }
+
+        private void AsignaturasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cAsignaturas cas = new cAsignaturas();
+            cas.Show();
         }
     }
 }

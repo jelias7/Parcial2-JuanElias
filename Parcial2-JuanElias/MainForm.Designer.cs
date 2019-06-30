@@ -33,13 +33,16 @@
             this.asignaturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignaturasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrosToolStripMenuItem});
+            this.registrosToolStripMenuItem,
+            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -59,23 +62,38 @@
             // asignaturasToolStripMenuItem
             // 
             this.asignaturasToolStripMenuItem.Name = "asignaturasToolStripMenuItem";
-            this.asignaturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignaturasToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.asignaturasToolStripMenuItem.Text = "Asignaturas";
             this.asignaturasToolStripMenuItem.Click += new System.EventHandler(this.AsignaturasToolStripMenuItem_Click);
             // 
             // estudiantesToolStripMenuItem
             // 
             this.estudiantesToolStripMenuItem.Name = "estudiantesToolStripMenuItem";
-            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.estudiantesToolStripMenuItem.Text = "Estudiantes";
             this.estudiantesToolStripMenuItem.Click += new System.EventHandler(this.EstudiantesToolStripMenuItem_Click);
             // 
             // inscripcionesToolStripMenuItem
             // 
             this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
             this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.InscripcionesToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignaturasToolStripMenuItem1});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // asignaturasToolStripMenuItem1
+            // 
+            this.asignaturasToolStripMenuItem1.Name = "asignaturasToolStripMenuItem1";
+            this.asignaturasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.asignaturasToolStripMenuItem1.Text = "Asignaturas";
+            this.asignaturasToolStripMenuItem1.Click += new System.EventHandler(this.AsignaturasToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -100,6 +118,8 @@
         private System.Windows.Forms.ToolStripMenuItem asignaturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estudiantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignaturasToolStripMenuItem1;
     }
 }
 
