@@ -49,6 +49,7 @@
             this.Consultabutton.Size = new System.Drawing.Size(43, 48);
             this.Consultabutton.TabIndex = 0;
             this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
             // 
             // label1
             // 
@@ -89,6 +90,11 @@
             // FiltrocomboBox
             // 
             this.FiltrocomboBox.FormattingEnabled = true;
+            this.FiltrocomboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Nombres",
+            "Balance"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(232, 38);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(150, 21);
@@ -130,7 +136,6 @@
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(561, 372);
             this.ConsultadataGridView.TabIndex = 9;
-         
             // 
             // cEstudiantes
             // 
