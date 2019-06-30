@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,8 +36,16 @@ namespace Parcial2_JuanElias.UI.Consultas
                         break;
 
                     case "ID":
-                         int id = Convert.ToInt32(CriteriotextBox.Text);
-                         listado = r.GetList(p => p.AsignaturaId == id);
+                        int parse;
+                        if (!int.TryParse(CriteriotextBox.Text, out parse))
+                        {
+                            MessageBox.Show("Solo numeros.");
+                        }
+                        else
+                        {
+                            int id = Convert.ToInt32(CriteriotextBox.Text);
+                            listado = r.GetList(p => p.AsignaturaId == id);
+                        }
                         break;
 
                     case "Descripcion":
@@ -44,8 +53,16 @@ namespace Parcial2_JuanElias.UI.Consultas
                         break;
 
                     case "Creditos":
-                        double c = double.Parse(CriteriotextBox.Text);
-                        listado = r.GetList(p => p.Creditos == c);
+                        double parsec;
+                        if (!double.TryParse(CriteriotextBox.Text, out parsec))
+                        {
+                            MessageBox.Show("Solo numeros.");
+                        }
+                        else
+                        {
+                            double c = double.Parse(CriteriotextBox.Text);
+                            listado = r.GetList(p => p.Creditos == c);
+                        }
                         break;
 
                 }
