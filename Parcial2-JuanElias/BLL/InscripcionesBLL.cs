@@ -26,7 +26,7 @@ namespace Parcial2_JuanElias.BLL
 
                     Inscripcion.Calculo();
 
-                    estudiante.Balance = Inscripcion.Monto;
+                    estudiante.Balance += Inscripcion.Monto;
 
                     paso = contexto.SaveChanges() > 0;
 
@@ -86,18 +86,22 @@ namespace Parcial2_JuanElias.BLL
             }
             return paso;
         }
-        public static bool Elimimar(int id)
+        public static bool Eliminar(int id)
         {
             bool paso = false;
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
             Contexto contexto = new Contexto();
 
             try
             {
-                var eliminar = contexto.Inscripcion.Find(id);
+                var Inscripcion = contexto.Inscripcion.Find(id);
+                var Estudiante = Repositorio.Buscar(Inscripcion.EstudianteId);
 
-                contexto.Entry(eliminar).State = EntityState.Deleted;
+                Estudiante.Balance = Estudiante.Balance - Inscripcion.Monto;
+                Repositorio.Modificar(Estudiante);
 
-                paso = contexto.SaveChanges() > 0;
+                contexto.Entry(Inscripcion).State = EntityState.Deleted;
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,17 +43,19 @@
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Removerbutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostoCreditosnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -138,13 +141,14 @@
             0,
             0});
             this.TotalnumericUpDown.Name = "TotalnumericUpDown";
+            this.TotalnumericUpDown.ReadOnly = true;
             this.TotalnumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.TotalnumericUpDown.TabIndex = 8;
             // 
             // AsignaturacomboBox
             // 
             this.AsignaturacomboBox.FormattingEnabled = true;
-            this.AsignaturacomboBox.Location = new System.Drawing.Point(88, 26);
+            this.AsignaturacomboBox.Location = new System.Drawing.Point(74, 26);
             this.AsignaturacomboBox.Name = "AsignaturacomboBox";
             this.AsignaturacomboBox.Size = new System.Drawing.Size(262, 24);
             this.AsignaturacomboBox.TabIndex = 9;
@@ -153,7 +157,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 26);
+            this.label6.Location = new System.Drawing.Point(11, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 10;
@@ -192,6 +196,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info.";
             // 
+            // Addbutton
+            // 
+            this.Addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbutton.Image = global::Parcial2_JuanElias.Properties.Resources.add_insert_plus_1588;
+            this.Addbutton.Location = new System.Drawing.Point(356, 13);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(39, 39);
+            this.Addbutton.TabIndex = 14;
+            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
+            // 
             // Removerbutton
             // 
             this.Removerbutton.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,16 +219,7 @@
             this.Removerbutton.Text = "REMOVER";
             this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Removerbutton.UseVisualStyleBackColor = true;
-            // 
-            // Addbutton
-            // 
-            this.Addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addbutton.Image = global::Parcial2_JuanElias.Properties.Resources.add_insert_plus_1588;
-            this.Addbutton.Location = new System.Drawing.Point(356, 13);
-            this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(39, 39);
-            this.Addbutton.TabIndex = 14;
-            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -223,6 +229,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(64, 47);
             this.Eliminarbutton.TabIndex = 14;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -232,6 +239,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(62, 47);
             this.Guardarbutton.TabIndex = 15;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -241,6 +249,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(61, 47);
             this.Nuevobutton.TabIndex = 16;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -250,6 +259,11 @@
             this.Buscarbutton.Size = new System.Drawing.Size(40, 37);
             this.Buscarbutton.TabIndex = 17;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rInscripciones
             // 
@@ -280,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +322,6 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
