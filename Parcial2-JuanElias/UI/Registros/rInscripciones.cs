@@ -29,9 +29,9 @@ namespace Parcial2_JuanElias.UI.Registros
             RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
             var list = new List<Estudiantes>();
             list = Repositorio.GetList(p => true);
-            AsignaturacomboBox.DataSource = list;
-            AsignaturacomboBox.DisplayMember = "Nombres";
-            AsignaturacomboBox.ValueMember = "EstudianteId";
+            EstudiantecomboBox.DataSource = list;
+            EstudiantecomboBox.DisplayMember = "Nombres";
+            EstudiantecomboBox.ValueMember = "EstudianteId";
         }
         private void AsignaturaComboBox()
         {
@@ -83,8 +83,8 @@ namespace Parcial2_JuanElias.UI.Registros
             Inscripcion.InscripcionId = Convert.ToInt32(InscripcionIdnumericUpDown.Value);
             Inscripcion.MontoCreditos = (double)CostoCreditosnumericUpDown.Value;
             Inscripcion.Fecha = FechadateTimePicker.Value;
-            Inscripcion.Monto = (double)TotalnumericUpDown.Value;
             Inscripcion.Calculo();
+            Inscripcion.Monto = (double)TotalnumericUpDown.Value;
             return Inscripcion;
         }
 
@@ -189,7 +189,6 @@ namespace Parcial2_JuanElias.UI.Registros
 
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<InscripcionesDetalle>)DetalledataGridView.DataSource;
-
 
 
             this.Detalle.Add(new InscripcionesDetalle()
