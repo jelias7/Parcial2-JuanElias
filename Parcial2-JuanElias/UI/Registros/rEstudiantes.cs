@@ -74,6 +74,19 @@ namespace Parcial2_JuanElias.UI.Registros
 
             return paso;
         }
+        private bool ValidarEliminar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (EstudianteIdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(EstudianteIdnumericUpDown, "Busquelo y luego eliminelo.");
+                EstudianteIdnumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
@@ -108,6 +121,8 @@ namespace Parcial2_JuanElias.UI.Registros
             RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
 
             MyErrorProvider.Clear();
+            if (!ValidarEliminar())
+                return;
 
             int id;
             int.TryParse(EstudianteIdnumericUpDown.Text, out id);

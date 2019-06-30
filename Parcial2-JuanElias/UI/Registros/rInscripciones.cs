@@ -201,11 +201,25 @@ namespace Parcial2_JuanElias.UI.Registros
 
             CargarGrid();
         }
+        private bool ValidarEliminar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
 
+            if (InscripcionIdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(InscripcionIdnumericUpDown, "Busquelo y luego eliminelo.");
+                InscripcionIdnumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Inscripciones> db = new RepositorioBase<Inscripciones>();
             MyErrorProvider.Clear();
+            if (!ValidarEliminar())
+                return;
 
             int id;
 

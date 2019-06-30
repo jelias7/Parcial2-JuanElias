@@ -115,12 +115,26 @@ namespace Parcial2_JuanElias.UI.Registros
                 MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
         }
+        private bool ValidarEliminar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
 
+            if (AsignaturaIdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(AsignaturaIdnumericUpDown, "Busquelo y luego eliminelo.");
+                AsignaturaIdnumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
 
             MyErrorProvider.Clear();
+            if (!ValidarEliminar())
+                return;
 
             int id;
             int.TryParse(AsignaturaIdnumericUpDown.Text, out id);
