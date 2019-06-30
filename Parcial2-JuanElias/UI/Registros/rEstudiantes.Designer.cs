@@ -109,6 +109,7 @@
             this.NombrestextBox.Name = "NombrestextBox";
             this.NombrestextBox.Size = new System.Drawing.Size(283, 20);
             this.NombrestextBox.TabIndex = 6;
+            this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
             // 
             // FechaIngresodateTimePicker
             // 

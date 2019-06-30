@@ -149,5 +149,11 @@ namespace Parcial2_JuanElias.UI.Registros
             else
                 MessageBox.Show("No encontrado.");
         }
+
+        private void NombrestextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

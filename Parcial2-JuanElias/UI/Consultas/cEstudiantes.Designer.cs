@@ -130,6 +130,7 @@
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(561, 372);
             this.ConsultadataGridView.TabIndex = 9;
+         
             // 
             // cEstudiantes
             // 
@@ -148,7 +149,6 @@
             this.Controls.Add(this.Consultabutton);
             this.Name = "cEstudiantes";
             this.Text = "Consulta de Estudiantes";
-           
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
