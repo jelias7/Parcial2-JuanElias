@@ -1,4 +1,5 @@
 ﻿using Parcial2_JuanElias.BLL;
+using Parcial2_JuanElias.DAL;
 using Parcial2_JuanElias.Entidades;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,24 @@ namespace Parcial2_JuanElias.UI.Registros
             return (Asignatura != null);
 
         }
+        public static bool RepeticionDeAsignatura(string descripcion)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                if (contexto.Asignatura.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
         private bool Validar()
         {
             bool paso = true;
@@ -83,6 +102,12 @@ namespace Parcial2_JuanElias.UI.Registros
             if (CreditosnumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(CreditosnumericUpDown, "Una asignatura no puede tener 0 creditos.");
+                paso = false;
+            }
+
+            if (RepeticionDeAsignatura(DescripciontextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripciontextBox, "Esta asignatura ya existe.");
                 paso = false;
             }
             return paso;
