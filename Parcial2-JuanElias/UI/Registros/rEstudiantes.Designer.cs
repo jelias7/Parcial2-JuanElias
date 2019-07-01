@@ -100,6 +100,7 @@
             0,
             0});
             this.BalancenumericUpDown.Name = "BalancenumericUpDown";
+            this.BalancenumericUpDown.ReadOnly = true;
             this.BalancenumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.BalancenumericUpDown.TabIndex = 5;
             // 
