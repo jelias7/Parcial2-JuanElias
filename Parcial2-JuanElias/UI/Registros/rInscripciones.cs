@@ -139,7 +139,7 @@ namespace Parcial2_JuanElias.UI.Registros
 
             if (Detalle.Count == 0)
             {
-                MyErrorProvider.SetError(AsignaturacomboBox, "No deje vacio la Asignatura");
+                MyErrorProvider.SetError(AsignaturacomboBox, "Agregue al Grid");
                 AsignaturacomboBox.Focus();
                 paso = false;
             }
@@ -184,8 +184,11 @@ namespace Parcial2_JuanElias.UI.Registros
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar())
+            if(AsignaturacomboBox.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione la asignatura.");
                 return;
+            }
 
             RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas Asignatura = Repositorio.Buscar((int)AsignaturacomboBox.SelectedValue);
