@@ -157,6 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(382, 231);
             this.Controls.Add(this.Buscarbutton);
@@ -169,6 +170,8 @@
             this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.CreditosnumericUpDown);
             this.Controls.Add(this.AsignaturaIdnumericUpDown);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rAsignaturas";
             this.Text = "Registro de Asignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();

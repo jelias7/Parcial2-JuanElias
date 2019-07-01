@@ -112,6 +112,7 @@
             // 
             // EstudiantecomboBox
             // 
+            this.EstudiantecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EstudiantecomboBox.FormattingEnabled = true;
             this.EstudiantecomboBox.Location = new System.Drawing.Point(100, 63);
             this.EstudiantecomboBox.Name = "EstudiantecomboBox";
@@ -147,6 +148,7 @@
             // 
             // AsignaturacomboBox
             // 
+            this.AsignaturacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AsignaturacomboBox.FormattingEnabled = true;
             this.AsignaturacomboBox.Location = new System.Drawing.Point(74, 26);
             this.AsignaturacomboBox.Name = "AsignaturacomboBox";
@@ -270,6 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(428, 512);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -287,6 +290,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rInscripciones";
             this.Text = "Registro de Inscripciones";
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdnumericUpDown)).EndInit();

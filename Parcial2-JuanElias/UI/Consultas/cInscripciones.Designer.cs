@@ -91,6 +91,7 @@
             // 
             // FiltrocomboBox
             // 
+            this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "InscripcionId",
@@ -153,6 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(775, 450);
             this.Controls.Add(this.RangocheckBox);
             this.Controls.Add(this.ConsultadataGridView);
@@ -165,6 +167,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Consultabutton);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cInscripciones";
             this.Text = "Consulta de Inscripciones";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
