@@ -38,13 +38,14 @@
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.RangocheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Consultabutton
             // 
             this.Consultabutton.Image = global::Parcial2_JuanElias.Properties.Resources.Search_find_locate_1542;
-            this.Consultabutton.Location = new System.Drawing.Point(543, 12);
+            this.Consultabutton.Location = new System.Drawing.Point(697, 13);
             this.Consultabutton.Name = "Consultabutton";
             this.Consultabutton.Size = new System.Drawing.Size(43, 48);
             this.Consultabutton.TabIndex = 0;
@@ -72,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 9);
+            this.label3.Location = new System.Drawing.Point(342, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 3;
@@ -81,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(385, 9);
+            this.label4.Location = new System.Drawing.Point(498, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 4;
@@ -95,23 +96,23 @@
             "ID",
             "Nombres",
             "Balance"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(232, 38);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(345, 40);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(150, 21);
             this.FiltrocomboBox.TabIndex = 5;
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(388, 38);
+            this.CriteriotextBox.Location = new System.Drawing.Point(501, 40);
             this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(149, 20);
+            this.CriteriotextBox.Size = new System.Drawing.Size(190, 20);
             this.CriteriotextBox.TabIndex = 6;
             // 
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(25, 38);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(25, 40);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(98, 20);
             this.DesdedateTimePicker.TabIndex = 7;
@@ -120,7 +121,7 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(129, 38);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(129, 40);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(97, 20);
             this.HastadateTimePicker.TabIndex = 8;
@@ -134,14 +135,25 @@
             this.ConsultadataGridView.Location = new System.Drawing.Point(25, 66);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.ReadOnly = true;
-            this.ConsultadataGridView.Size = new System.Drawing.Size(561, 372);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(715, 372);
             this.ConsultadataGridView.TabIndex = 9;
+            // 
+            // RangocheckBox
+            // 
+            this.RangocheckBox.AutoSize = true;
+            this.RangocheckBox.Location = new System.Drawing.Point(232, 42);
+            this.RangocheckBox.Name = "RangocheckBox";
+            this.RangocheckBox.Size = new System.Drawing.Size(107, 17);
+            this.RangocheckBox.TabIndex = 10;
+            this.RangocheckBox.Text = "Buscar por fecha";
+            this.RangocheckBox.UseVisualStyleBackColor = true;
             // 
             // cEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.ClientSize = new System.Drawing.Size(762, 450);
+            this.Controls.Add(this.RangocheckBox);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.HastadateTimePicker);
             this.Controls.Add(this.DesdedateTimePicker);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.DateTimePicker HastadateTimePicker;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
+        private System.Windows.Forms.CheckBox RangocheckBox;
     }
 }
