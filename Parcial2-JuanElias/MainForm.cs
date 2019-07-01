@@ -48,5 +48,11 @@ namespace Parcial2_JuanElias
             cEstudiantes ces = new cEstudiantes();
             ces.Show();
         }
+
+        private void InscripcionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cInscripciones ins = new cInscripciones();
+            ins.Show();
+        }
     }
 }
