@@ -95,9 +95,9 @@
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "InscripcionId",
             "EstudianteId",
-            "Fecha",
             "Monto",
-            "Monto de Creditos"});
+            "Monto de Creditos",
+            "Todo"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(364, 42);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(150, 21);
@@ -147,6 +147,7 @@
             this.Consultabutton.Size = new System.Drawing.Size(43, 48);
             this.Consultabutton.TabIndex = 11;
             this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
             // 
             // cInscripciones
             // 
